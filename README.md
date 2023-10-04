@@ -7,4 +7,3 @@ MY OWN PRINTF LIB
 - run command > make main main="yourmain.c"
 - run the program called "c"
 - and Use This Trash :)
-#END
