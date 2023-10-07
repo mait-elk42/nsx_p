@@ -55,7 +55,7 @@ void nsx_pintnl(int n)
 }
 void nsx_plong(long n)
 {
-    char buffer[12];
+    char buffer[100];
     int i = 11;
     buffer[i--] = '\0';
     if(n == 0)
