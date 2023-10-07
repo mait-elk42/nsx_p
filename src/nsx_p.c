@@ -81,7 +81,7 @@ void nsx_plong(long n)
     }
     nsx_pstr(&buffer[i+1]);
 }
-void nsx_plongnl(int n)
+void nsx_plongnl(long n)
 {
     nsx_plong(n);
     nsx_pchar('\n');
