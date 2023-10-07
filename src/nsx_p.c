@@ -53,6 +53,39 @@ void nsx_pintnl(int n)
     nsx_pint(n);
     nsx_pchar('\n');
 }
+void nsx_plong(long n)
+{
+    char buffer[12];
+    int i = 11;
+    buffer[i--] = '\0';
+    if(n == 0)
+    {
+        nsx_pchar('0');
+        return;
+    }
+    if(n == -2147483648)
+    {
+        nsx_pstr("-2147483648");
+        return;
+    }
+    if(n < 0)
+    {
+        nsx_pchar('-');
+        n *= -1;
+    }
+    while(n)
+    {
+        buffer[i] = (n % 10) + 48;
+        n /= 10;
+        i--;
+    }
+    nsx_pstr(&buffer[i+1]);
+}
+void nsx_plongnl(int n)
+{
+    nsx_plong(n);
+    nsx_pchar('\n');
+}
 void nsx_pp(void* nb)
 {
     long n = (long)nb;
